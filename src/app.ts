@@ -1,5 +1,6 @@
 import express from 'express'
 import './database'
+import routes from './routes'
 
 class App {
   public express: express.Application
@@ -7,20 +8,20 @@ class App {
   public constructor () {
     this.express = express()
     this.database()
-    this.routes()
     this.middlewares()
-  }
-
-  private middlewares () {
-    this.express.use(express.json())
+    this.routes()
   }
 
   private database () {
 
   }
 
-  private routes () {
+  private middlewares () {
+    this.express.use(express.json())
+  }
 
+  private routes () {
+    this.express.use(routes)
   }
 }
 
