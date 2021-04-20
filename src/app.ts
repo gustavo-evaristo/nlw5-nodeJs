@@ -1,4 +1,5 @@
 import express from 'express'
+import './database'
 
 class App {
   public express: express.Application
