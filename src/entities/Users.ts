@@ -2,16 +2,13 @@ import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn } fro
 
 import { v4 as uuid } from 'uuid'
 
-@Entity('settings')
-export default class Settings {
+@Entity('users')
+export default class Users {
   @PrimaryColumn()
   id: string
 
   @Column()
-  username: string
-
-  @Column()
-  chat: boolean
+  email: string
 
   @CreateDateColumn()
   createdAt: Date
@@ -20,6 +17,8 @@ export default class Settings {
   updatedAt: Date
 
   constructor () {
-    if (!this.id) this.id = uuid()
+    if (!this.id) {
+      this.id = uuid()
+    }
   }
 }
