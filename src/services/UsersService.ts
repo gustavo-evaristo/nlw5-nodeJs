@@ -8,7 +8,7 @@ export default class UsersService {
 
     const userAlreadyExists = await usersRepository.findOne({ email })
 
-    if (userAlreadyExists) throw new Error('User already exists')
+    if (userAlreadyExists) return userAlreadyExists
 
     const user = usersRepository.create({ email })
 

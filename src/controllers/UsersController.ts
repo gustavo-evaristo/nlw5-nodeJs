@@ -5,8 +5,6 @@ class UsersController {
   async create (req: Request, res: Response): Promise<Response> {
     const { email } = req.body
 
-    console.log(req.body)
-
     const usersService = new UsersService()
 
     try {
