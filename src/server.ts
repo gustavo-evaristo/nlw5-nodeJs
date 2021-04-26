@@ -1,3 +1,6 @@
 import App from './app'
+import './websocket/client'
 
-App.listen(3000, () => console.log('Server is running'))
+const http = App.http
+
+http.listen(3000, () => console.log('Server is running'))
